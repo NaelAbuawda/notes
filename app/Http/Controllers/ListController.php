@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ListController extends Controller
 {
     public function list(){
-        $notes = Note::all();
+        $notes = Note::all()->sortByDesc('created_at');
         return view('list', compact('notes'));
 
     }
